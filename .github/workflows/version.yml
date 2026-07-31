@@ -29,6 +29,10 @@ jobs:
 
           git add version.txt
           git commit -m "Auto increment version" || echo "No changes"
+          
+      - name: Run Django Tests
+        run: |
+          python backend/manage.py test    
 
       - name: Push changes
         run: |
